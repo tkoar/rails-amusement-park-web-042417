@@ -303,12 +303,12 @@ describe 'Feature Test: Admin Flow', :type => :feature do
 
   it 'has a link from the user show page to the attractions index page when in admin mode' do
     click_link('See attractions')
-    expect(page).to have_content("#{@teacups.name}")
-    expect(page).to have_content("#{@rollercoaster.name}")
-    expect(page).to have_content("#{@ferriswheel.name}")
+    expect(pa have_content("#{@ferriswheel.name}")
   end
 
-  it 'allows admins to add an attraction from the index page' do
+  it 'allows admins toge).to have_content("#{@teacups.name}")
+    expect(page).to have_content("#{@rollercoaster.name}")
+    expect(page).to add an attraction from the index page' do
     click_link('See attractions')
     expect(page).to have_content("New Attraction")
   end

@@ -1,28 +1,11 @@
 Rails.application.routes.draw do
 
 
-  get 'users/index'
+  root 'application#index'
+  resources :attractions
+  resources :user, except: [:delete, :destory]
 
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'attractions/index'
-
-  get 'attractions/show'
-
-  get 'attractions/new'
-
-  get 'attractions/create'
-
-  get 'rides/index'
-
-  get 'rides/show'
-
-  get 'rides/new'
-
-  get 'rides/create'
+  get '/login', to: "sessions#new"
+  delete "/logout", to: "sessions#destroy", as: :logout
 
 end
