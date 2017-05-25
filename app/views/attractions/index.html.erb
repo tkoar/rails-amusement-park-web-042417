@@ -8,11 +8,14 @@
     <th>Link to Attraction</th>
   </tr>
   <% @attractions.each do |attraction| %>
+  <% if User.find_by(id: session[:user_id]).admin %>
+  <p><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></p>
+  <% end %>
   <tr>
     <td>PICTURE</td>
     <td><%= attraction.name %></td>
     <td><%= attraction.tickets %></td>
-    <td><%= link_to "go to #{attraction.name}", attraction_path(attraction) %></td>
+    <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
   </tr>
   <% end %>
 </table>

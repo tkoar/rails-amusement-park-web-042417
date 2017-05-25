@@ -5,12 +5,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    binding.pry
-    user = User.find_by_name(:name)
-    if user && user.authenticate(params[:password])
+    user = User.find_by_name(params[:user][:name])
+    if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      redirect_to root_path
     end
-    redirect_to root_path
   end
 
   def destroy

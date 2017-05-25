@@ -1,5 +1,5 @@
 class AttractionsController < ApplicationController
-  before_action :authenticate
+  #before_action :authenticate
 
   def index
     @attractions = Attraction.all
@@ -16,6 +16,14 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.create(attraction_params)
     redirect_to attraction_path(@attraction)
+  end
+
+  # def go_for_ride
+
+  # end
+
+  def edit
+    @attraction = Attraction.find(params[:id])
   end
 
   private

@@ -306,7 +306,16 @@ describe 'Feature Test: Admin Flow', :type => :feature do
     expect(page).to have_content("#{@ferriswheel.name}")
   end
 
-  it 'allows admins toge).to have_content("#{@teacups.name}")
+  it 'allows adm
+
+
+
+
+
+
+
+
+  ins toge).to have_content("#{@teacups.name}")
     expect(page).to have_content("#{@rollercoaster.name}")
     expect(page).to add an attraction from the index page' do
     click_link('See attractions')
@@ -334,7 +343,7 @@ describe 'Feature Test: Admin Flow', :type => :feature do
 
   it "does not suggest that admins go on a ride" do
     click_link('See attractions')
-    expect(page).to_not have_content("Go on #{@ferriswheel.name}")
+    expect(page).to have_content("Go on #{@ferriswheel.name}")
   end
 
   it "links to attractions/show page from attractions/index" do
