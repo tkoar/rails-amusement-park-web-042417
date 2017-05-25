@@ -1,2 +1,19 @@
-<h1>Attractions#index</h1>
-<p>Find me in app/views/attractions/index.html.erb</p>
+<h1>Attractions:</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>PICTURE</th>
+    <th>Name</th>
+    <th>Tickets</th>
+    <th>Link to Attraction</th>
+  </tr>
+  <% @attractions.each do |attraction| %>
+  <tr>
+    <td>PICTURE</td>
+    <td><%= attraction.name %></td>
+    <td><%= attraction.tickets %></td>
+    <td><%= link_to "go to #{attraction.name}", attraction_path(attraction) %></td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "New Attraction", new_attraction_path %>
