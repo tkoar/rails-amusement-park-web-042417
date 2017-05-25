@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :attractions
   resources :users, except: [:delete, :destory]
 
+  # resources :sessions, only: [:new, :create, :show, :delete, :destroy]
   get '/login', to: "sessions#new"
-  delete "/logout", to: "sessions#destroy", as: :logout
+  post '/login', to: 'sessions#create'
+  post "/logout", to: "sessions#destroy", as: :logout
 
 end

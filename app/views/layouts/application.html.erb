@@ -40,6 +40,11 @@
         <% end %>
       </div>
     </div>
+    <% flash.each do |name, msg| %>
+      <% if name == "error" %>
+      <b><%= msg.html_safe %></b>
+      <% end %>
+    <% end %>
     <p>
     <!-- content -->
     <div class="container"  role="main">

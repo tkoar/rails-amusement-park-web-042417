@@ -1,4 +1,5 @@
 class AttractionsController < ApplicationController
+  before_action :authenticate
 
   def index
     @attractions = Attraction.all
@@ -6,7 +7,6 @@ class AttractionsController < ApplicationController
 
   def show
     @attraction = Attraction.find(params[:id])
-
   end
 
   def new
